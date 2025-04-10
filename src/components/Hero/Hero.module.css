@@ -4,10 +4,29 @@
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   height: auto;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
 }
 
 .content {
@@ -25,4 +44,15 @@
   font-size: 24px;
   line-height: 1.33333;
   padding-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    align-items: flex-end;
+    position: unset;
+  }
+
+  .hero::before {
+    content: unset;
+  }
 }

@@ -1,0 +1,18 @@
+.btn {
+  border-radius: 12px;
+  padding: 12px 0;
+  width: 276px;
+  height: 44px;
+  background-color: var(--button);
+  color: var(--white);
+  margin: 0 auto;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--button-hover);
+}
