@@ -1,5 +1,8 @@
 .wrp {
-  margin-top: 60px;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loader {
@@ -7,6 +10,7 @@
   height: 48px;
   position: relative;
 }
+
 .loader::before,
 .loader::after {
   content: '';
@@ -31,6 +35,7 @@
   border-radius: 50%;
   animation: blast 1s ease-in infinite;
 }
+
 .loader::after {
   font-size: 1px;
   background: #3470ff;

@@ -21,6 +21,12 @@ const slice = createSlice({
     reducers: {
         setCurrentPage: (state) => {
             state.currentPage += 1
+        },
+        clearItems: (state) => {
+            state.items = []
+        },
+        resetPage: (state) => {
+            state.currentPage = 1
         }
     },
     extraReducers: (builder) => {
@@ -32,9 +38,9 @@ const slice = createSlice({
                 state.loading = false
                 state.error = null
 
-                const newCars = payload.cars.filter((car) => !state.items.some((existing) => existing.id === car.id))
-                state.items.push(...newCars)
-                // state.items = payload.cars
+                // const newCars = payload.cars.filter((car) => !state.items.some((existing) => existing.id === car.id))
+                // state.items.push(...newCars)
+                state.items = payload.cars
                 state.totalPages = payload.totalPages
             })
             .addCase(getCars.rejected, (state, {payload}) => {
@@ -45,5 +51,5 @@ const slice = createSlice({
 })
 
 export const {selectCars, selectCurrentPage, selectTotalPages, selectLoading} = slice.selectors
-export const { setCurrentPage } = slice.actions
+export const { setCurrentPage, clearItems, resetPage } = slice.actions
 export const carsReducer = slice.reducer

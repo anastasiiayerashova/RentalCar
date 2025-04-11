@@ -9,6 +9,7 @@ import { prices } from '../../constants/index.js';
 import s from './Filters.module.css'
 import { NumericFormat } from 'react-number-format';
 import CustomArrowIcon from '../ArrowIcon/ArrowIcon.jsx';
+import { clearItems, resetPage } from '../../redux/cars/slice.js';
 
 const Filters = () => {
     const carBrands = useSelector(selectCarBrands)
@@ -31,7 +32,9 @@ const Filters = () => {
     const handleSubmit = (e) => {
 
         e.preventDefault()
-
+        
+        dispatch(clearItems())
+        dispatch(resetPage())
         dispatch(setFilters(formData))
 
         const filteredData = {}
@@ -43,8 +46,6 @@ const Filters = () => {
         
         setSearchParams(filteredData)
     }
-
-    
 
     const handleChangeData = (e) => {
         const { name, value } = e.target
@@ -101,7 +102,26 @@ const Filters = () => {
                                     }
                                 }
                             }}
-                            >
+                        >
+                                   <MenuItem 
+                                        value=''
+                                        sx={{
+                                           
+                                            padding: 0,
+                                            '&:hover': {
+                                                    backgroundColor: 'transparent'
+                                                },
+                                            '&.Mui-selected': {
+                                                backgroundColor: 'transparent',
+                                                color: 'var(--main)',
+                                                '&:hover': {
+                                                    backgroundColor: 'transparent'
+                                                }
+                                            }
+                                        }}
+                                    >
+                                        Clear filter
+                                    </MenuItem>
                                 {carBrands.map((brand) => (
                                     <MenuItem
                                         key={brand}
@@ -170,7 +190,26 @@ const Filters = () => {
                                     }
                                 }
                             }}
-                            >
+                        >
+                                    <MenuItem 
+                                        value=''
+                                        sx={{
+                                           
+                                            padding: 0,
+                                            '&:hover': {
+                                                    backgroundColor: 'transparent'
+                                                },
+                                            '&.Mui-selected': {
+                                                backgroundColor: 'transparent',
+                                                color: 'var(--main)',
+                                                '&:hover': {
+                                                    backgroundColor: 'transparent'
+                                                }
+                                            }
+                                        }}
+                                    >
+                                        Clear filter
+                                    </MenuItem>
                                 {prices.map((price) => (
                                     <MenuItem
                                         key={price}
