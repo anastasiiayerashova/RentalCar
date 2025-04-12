@@ -1,15 +1,18 @@
 import Button from '../Button/Button.jsx'
+import { useLocation, Link } from 'react-router-dom'
 import s from './CarItem.module.css'
 
 const CarItem = ({ data }) => {
 
-    const { img, brand, model, rentalPrice, address, rentalCompany, type, mileage, description, year } = data
+    const { img, brand, model, rentalPrice, address, rentalCompany, type, mileage, description, year, id } = data
 
     const [city, country] = address.split(', ').slice(-2)
 
     const newMileage = mileage.toLocaleString('fr-FR')
 
     const formatCapitalized = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+
+    const location = useLocation()
     
     return (
         <li className={s.item}>
@@ -34,7 +37,8 @@ const CarItem = ({ data }) => {
                 <p className={s.item_second}>{formatCapitalized(type)}</p>
                 <p className={s.item_second}>{`${newMileage} km`}</p>
             </div>
-            <Button text='Read more' to='/' className={s.btn} />
+            
+            <Button text='Read more' to={`/cars/${id.toString()}`} state={location} className={s.btn} />
         </li>
     )
  }

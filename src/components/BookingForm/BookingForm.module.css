@@ -1,0 +1,62 @@
+.visually_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.container {
+  padding: 32px;
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  padding-bottom: 8px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--gray);
+  padding-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.input_group input,
+.input_group textarea {
+  border-radius: 12px;
+  padding: 12px 20px;
+  background-color: var(--inputs);
+  padding-left: 20px;
+  outline: none;
+  border: none;
+  width: 100%;
+  resize: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--gray);
+}
+
+.error {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.25;
+  color: #ff0e0e;
+}

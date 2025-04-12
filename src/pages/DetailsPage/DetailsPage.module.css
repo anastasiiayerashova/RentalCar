@@ -1,0 +1,39 @@
+.details {
+  padding: 60px 30px 60px 30px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 56px;
+}
+
+.first_wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.image {
+  width: 335px;
+  height: 268px;
+  border-radius: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .details {
+    padding: 84px 120px 104px 120px;
+  }
+
+  .main {
+    flex-direction: row;
+    column-gap: 72px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .image {
+    width: 640px;
+    height: 512px;
+  }
+}
