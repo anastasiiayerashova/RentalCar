@@ -189,24 +189,102 @@ img {
   margin-top: 4px;
 } */
 
-.MuiPaper-root {
-  margin-top: 10px;
-  width: 276px;
-  max-width: 276px;
-  max-height: 284px;
-  border-radius: 12px;
-  border: 1px solid var(--button);
-  padding: 12px 0;
-}
+@media screen and (max-width: 768px) {
+  .MuiPaper-root {
+    margin-top: 10px;
+    width: 276px;
+    max-width: 276px;
+    max-height: 284px;
+    border-radius: 14px;
+    border: 1px solid var(--button);
+  }
 
-.MuiDateCalendar-root {
-  width: 276px;
-  max-width: 276px;
-  padding: 0 12px;
-  max-height: 284px;
-  border-radius: 12px;
-}
+  .MuiDateCalendar-root {
+    width: 276px;
+    max-width: 276px;
+    /* padding: 0 12px; */
+    max-height: 284px;
+    border-radius: 14px;
+  }
 
-.MuiDateCalendar-root .MuiPickersCalendarHeader-root {
-  margin-bottom: 12px;
+  .MuiDateCalendar-root .MuiPickersCalendarHeader-root {
+    margin-bottom: 12px;
+
+    position: relative;
+  }
+
+  .MuiDateCalendar-root .MuiPickersCalendarHeader-root::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 1px;
+    background-color: var(--button);
+  }
+
+  .MuiPickersCalendarHeader-root .MuiPickersCalendarHeader-labelContainer {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--main);
+  }
+
+  .MuiDayCalendar-header .MuiTypography-root {
+    height: 14px;
+  }
+
+  .MuiDayCalendar-slideTransition .MuiPickersDay-root {
+    height: 32px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--main);
+  }
+
+  .MuiDayCalendar-root {
+    padding: 0 12px;
+  }
+
+  .MuiDayCalendar-header {
+    margin-bottom: 4px;
+  }
+
+  .MuiYearCalendar-root {
+    max-width: 290px;
+  }
+
+  .MuiButtonBase-root.MuiPickersDay-today:not(.Mui-selected) {
+    border: 1px solid var(--button);
+    color: var(--button);
+  }
+
+  .MuiButtonBase-root.MuiPickersDay-root.Mui-selected {
+    background-color: var(--button);
+    color: var(--white);
+  }
+
+  .MuiPickersPopper-paper {
+    border-radius: 12px !important;
+    overflow: hidden;
+  }
+
+  .MuiButtonBase-root.MuiIconButton-root.MuiPickersCalendarHeader-switchViewButton {
+    display: none;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .MuiSvgIcon-root.MuiPickersCalendarHeader-switchViewIcon {
+    display: none;
+  }
+
+  .MuiButtonBase-root.MuiIconButton-root.MuiPickersArrowSwitcher-button {
+    font-size: 20px;
+    color: var(--button);
+  }
 }

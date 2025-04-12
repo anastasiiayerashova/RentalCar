@@ -3,37 +3,47 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { TextField } from "@mui/material";
-import dayjs from "dayjs";
 import { useState } from "react";
-
 
 const Calendar = () => {
 
-    const [selectedDate, setSelectedDate] = useState(null);
+    const handleOpen = () => {
+     
+    setTimeout(() => {
+      const weekLabels = document.querySelectorAll(
+        '.MuiDayCalendar-header span.MuiTypography-root'
+    );
+
+    const labels = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
+
+    weekLabels.forEach((el, i) => {
+      el.textContent = labels[i];
+    })
+        
+  }, 0)
+}
+
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const handleDateChange = (newValue) => {
     setSelectedDate(newValue);
-  };
+    };
 
     return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DesktopDatePicker
+    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="en">
+            <DesktopDatePicker onOpen={handleOpen}
                 value={selectedDate}
                 onChange={handleDateChange}
                 label="Booking date"
                 PopperProps={{
                     className: 'calendar',
-                    
                     sx: {
-            "& .MuiPaper-root": {
-              width: "276px", 
-              borderRadius: "12px",
-                            overflow: "hidden",
-              "@media (max-width: 375px)": {
-            width: "calc(100% - 32px)", 
-          },
-            },
-          },
+                    "& .MuiPaper-root": {
+                    width: "276px", 
+                    borderRadius: "14px",
+                    overflow: "hidden",
+                    },
+                   },
                 }}
             format="LL"
             slots={{ textField: TextField }}
@@ -61,12 +71,13 @@ const Calendar = () => {
                    height: '48px',
                 '& fieldset': {
                     border: 'none'
-                    },
+                        },
                 '& .MuiSvgIcon-root': {
                     color: 'var(--gray)',
                     width: '20px',
                     height: '20px'
-              },
+                        },
+                
               },
             },
           },
