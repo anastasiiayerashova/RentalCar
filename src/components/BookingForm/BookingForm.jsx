@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useId } from 'react';
 import * as Yup from 'yup';
 import { schema } from '../../constants/index.js';
+import Calendar from '../DatePicker/DatePicker.jsx';
 
 const BookingForm = () => {
 
@@ -46,11 +47,13 @@ const BookingForm = () => {
                     {errors.email && <p className={s.error}>{errors.email.message}</p>}
                 </div>
                 <div className={s.input_group}>
+                    <Calendar/>
+                </div>
+                <div className={s.input_group}>
                     <label htmlFor={msgId} className={s.visually_hidden}>Message</label>
                     <textarea rows='5' cols='30' id={msgId} type='text' {...register('message')} placeholder='Comment' />
                     {errors.message && <p className={s.error}>{errors.message.message}</p>}
                 </div>
-                
             </form>
         </div>
     )
