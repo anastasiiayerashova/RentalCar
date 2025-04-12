@@ -9,33 +9,29 @@ import { useState } from "react";
 
 const Calendar = () => {
 
-    const [value, setValue] = useState(dayjs('2022-04-17'));
+    const [selectedDate, setSelectedDate] = useState(null);
+
+  const handleDateChange = (newValue) => {
+    setSelectedDate(newValue);
+  };
 
     return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DesktopDatePicker
+            <DesktopDatePicker
+                value={selectedDate}
+                onChange={handleDateChange}
                 label="Booking date"
                 PopperProps={{
                     className: 'calendar',
-                    modifiers: [
-            {
-              name: "offset",
-              options: {
-                offset: [0, 8],
-              },
-            },
-            {
-              name: "preventOverflow",
-              options: {
-                boundary: "viewport",
-              },
-            },
-                    ],
+                    
                     sx: {
             "& .MuiPaper-root": {
               width: "276px", 
               borderRadius: "12px",
-              overflow: "hidden",
+                            overflow: "hidden",
+              "@media (max-width: 375px)": {
+            width: "calc(100% - 32px)", 
+          },
             },
           },
                 }}
@@ -45,7 +41,7 @@ const Calendar = () => {
             textField: {
                fullWidth: true,
                     InputLabelProps: {
-                        shrink: false,
+                        shrink: selectedDate !== null,
                         sx: {
                             fontSize: '16px',
                             fontFamily: 'Manrope',

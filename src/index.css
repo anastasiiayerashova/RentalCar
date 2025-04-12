@@ -178,3 +178,35 @@ img {
     border: 8px solid transparent;
   }
 } */
+
+/* .MuiPaper-root {
+  width: 276px;
+  max-width: 276px;
+  padding: 22px 12px 12px 12px;
+  max-height: 284px;
+  border-radius: 12px;
+  border: 1px solid var(--button);
+  margin-top: 4px;
+} */
+
+.MuiPaper-root {
+  margin-top: 10px;
+  width: 276px;
+  max-width: 276px;
+  max-height: 284px;
+  border-radius: 12px;
+  border: 1px solid var(--button);
+  padding: 12px 0;
+}
+
+.MuiDateCalendar-root {
+  width: 276px;
+  max-width: 276px;
+  padding: 0 12px;
+  max-height: 284px;
+  border-radius: 12px;
+}
+
+.MuiDateCalendar-root .MuiPickersCalendarHeader-root {
+  margin-bottom: 12px;
+}

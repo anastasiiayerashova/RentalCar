@@ -1,4 +1,4 @@
-import { FormControl, MenuItem, OutlinedInput, Select } from '@mui/material';
+import { FormControl, MenuItem, Select } from '@mui/material';
 import { selectCarBrands } from '../../redux/brands/slice.js';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
