@@ -58,8 +58,6 @@ const CarList = () => {
             if (totalPages - currentPage === 1) {
                 console.log('no cars more')
                 setOpenSnackbar(true)
-                
-         
             }
             dispatch(setCurrentPage())
         }
@@ -77,7 +75,7 @@ const CarList = () => {
            {isLoading ? (
         <Loader />
     ) : (
-        <section className={s.car_section}>
+        <div className={s.car_section}>
             
                 <ul className={s.list}>
                     {cars.map((car) => (
@@ -94,7 +92,7 @@ const CarList = () => {
                     Load more
                 </button>
             )))  }
-        </section>
+        </div>
             )}
             <Snackbar
               open={openSnackbar}
@@ -105,22 +103,24 @@ const CarList = () => {
                    width: '90%', 
                    height: '50px', 
                    marginTop: '10px',
+                   fontSize: '16px',
                 }}
             >
                 <Alert
                     onClose={handleSnackbarClose}
-                    severity="info"
+                    severity="warning"
                     variant="filled"
                     sx={{
                         width: '100%', height: '100%',
                         fontFamily: 'Manrope',
-                        fontSize: '16px',
+                        fontSize: '18px',
+                        textAlign: 'center',
                         lineHeight: 1.25,
-                        fontWeight: 400,
+                        fontWeight: 500,
                         borderRadius: '14px',
-                        backgroundColor: 'var(--badges)',
+                        backgroundColor: '#FAC898',
                         color: 'var(--main)',
-                        border: '1px solid var(--main)'
+                        border: 'none'
                     }}>
                       All cars are loaded
                 </Alert>

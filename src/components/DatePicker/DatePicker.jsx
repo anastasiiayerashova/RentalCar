@@ -4,8 +4,10 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { TextField } from "@mui/material";
 import { useState } from "react";
+import CalendarIcon from "../CalendarIcon/CalendarIcon.jsx";
+import dayjs from "dayjs";
 
-const Calendar = () => {
+const Calendar = ({value, onChange}) => {
 
     const handleOpen = () => {
      
@@ -23,18 +25,19 @@ const Calendar = () => {
   }, 0)
 }
 
-  const [selectedDate, setSelectedDate] = useState(null);
+//   const [selectedDate, setSelectedDate] = useState(null);
 
-  const handleDateChange = (newValue) => {
-    setSelectedDate(newValue);
-    };
+//   const handleDateChange = (newValue) => {
+//     setSelectedDate(newValue);
+//     };
 
     return (
     <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="en">
             <DesktopDatePicker onOpen={handleOpen}
-                value={selectedDate}
-                onChange={handleDateChange}
+                value={value}
+                onChange={onChange}
                 label="Booking date"
+                minDate={dayjs()}
                 PopperProps={{
                     className: 'calendar',
                     sx: {
@@ -45,13 +48,13 @@ const Calendar = () => {
                     },
                    },
                 }}
-            format="LL"
-            slots={{ textField: TextField }}
+            format={value ? 'LL' : ''} 
+            slots={{ textField: TextField, openPickerIcon: CalendarIcon }}
             slotProps={{
             textField: {
                fullWidth: true,
                     InputLabelProps: {
-                        shrink: selectedDate !== null,
+                        shrink: value !== null,
                         sx: {
                             fontSize: '16px',
                             fontFamily: 'Manrope',
@@ -76,8 +79,7 @@ const Calendar = () => {
                     color: 'var(--gray)',
                     width: '20px',
                     height: '20px'
-                        },
-                
+                },
               },
             },
           },

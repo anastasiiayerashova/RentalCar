@@ -58,7 +58,7 @@ const Filters = () => {
     }
 
     return (
-        <section className={s.filters}>
+        <div className={s.filters}>
             <form className={s.form} onSubmit={handleSubmit}>
 
                 {/* brands */}
@@ -154,7 +154,7 @@ const Filters = () => {
                 </div>
                 <button type='submit' className={s.btn}>Search</button>
             </form>
-        </section>
+        </div>
     )
  }
 

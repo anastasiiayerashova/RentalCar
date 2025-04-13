@@ -14,24 +14,153 @@
   row-gap: 40px;
 }
 
+.second_wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 68px;
+}
+
 .image {
   width: 335px;
   height: 268px;
   border-radius: 14px;
 }
 
+.title_main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin-bottom: 16px;
+}
+
+.title_first {
+  display: flex;
+  column-gap: 16px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--main);
+  align-items: flex-end;
+}
+
+.title {
+  display: flex;
+  column-gap: 4px;
+}
+
+.id {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--gray);
+}
+
+.city_main {
+  display: flex;
+  column-gap: 16px;
+}
+
+.icon_city {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.rental {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.33333;
+  color: var(--button);
+  margin-bottom: 32px;
+}
+
+.descr {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.list_wrap {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  row-gap: 53px;
+}
+
+.list_main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.list_title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.features_list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  & li {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    & p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .details {
-    padding: 84px 120px 104px 120px;
+    padding: 84px 30px 104px 30px;
+  }
+
+  .descr {
+    max-width: 300px;
   }
 
   .main {
     flex-direction: row;
     column-gap: 72px;
   }
+
+  .title_first {
+    font-size: 24px;
+    line-height: 1.33333;
+  }
+
+  .rental {
+    font-size: 24px;
+  }
+
+  .list_title {
+    font-size: 24px;
+    line-height: 1.33333;
+  }
+
+  .list_wrap {
+    row-gap: 106px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .details {
+    padding: 84px 120px 104px 120px;
+  }
+
+  .descr {
+    max-width: 488px;
+  }
+
   .image {
     width: 640px;
     height: 512px;

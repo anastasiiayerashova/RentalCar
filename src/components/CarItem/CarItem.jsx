@@ -17,7 +17,7 @@ const CarItem = ({ data }) => {
     return (
         <li className={s.item}>
             <div className={s.img_wrapper}>
-                <img src={img} className={s.picture} width="335" height="268" alt={description} />
+                <img src={img} className={s.picture} width="276" height="268" alt={description} />
             </div>
             <div className={s.first_wrap}>
                 <p className={s.title}>
