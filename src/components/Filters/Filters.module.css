@@ -1,3 +1,10 @@
+@media screen and (max-width: 374px) {
+  .input_left,
+  .input_right {
+    max-width: 140px;
+  }
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -62,11 +69,17 @@
   outline: none;
 }
 
+.btn:hover,
+.btn:focus {
+  background-color: var(--button-hover);
+}
+
 @media screen and (min-width: 768px) {
   .form {
     flex-direction: row;
     column-gap: 16px;
     align-items: flex-end;
     justify-content: center;
+    flex-wrap: wrap;
   }
 }

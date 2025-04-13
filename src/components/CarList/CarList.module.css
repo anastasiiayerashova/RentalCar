@@ -3,6 +3,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   row-gap: 32px;
+  justify-content: center;
 }
 
 .btn {
@@ -18,9 +19,15 @@
   justify-content: center;
 }
 
+.btn:hover,
+.btn:focus {
+  border: 1px solid var(--button-hover);
+}
+
 @media screen and (min-width: 768px) {
   .list {
     flex-direction: row;
-    gap: 32px;
+    row-gap: 48px;
+    column-gap: 32px;
   }
 }

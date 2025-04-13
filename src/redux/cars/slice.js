@@ -33,20 +33,28 @@ const slice = createSlice({
         builder
             .addCase(getCars.pending, (state) => {
             state.loading = true
-        })
+            })
+            
             .addCase(getCars.fulfilled, (state, { payload }) => {
                 state.loading = false
                 state.error = null
 
-                // const newCars = payload.cars.filter((car) => !state.items.some((existing) => existing.id === car.id))
-                // state.items.push(...newCars)
-                state.items = payload.cars
-                state.totalPages = payload.totalPages
+                const { cars, totalPages } = payload
+                
+                if (state.currentPage === 1) {
+                    state.items = cars
+                }
+                else {
+                    state.items = [...state.items, ...cars]
+                }
+
+                state.totalPages = totalPages
             })
+
             .addCase(getCars.rejected, (state, {payload}) => {
                 state.loading = false
                 state.error = payload
-        })
+            })
     }
 })
 

@@ -64,11 +64,11 @@ const CarList = () => {
     }
 
     const handleSnackbarClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
+        if (reason === 'clickaway') {
+          return
+        }
+        setOpenSnackbar(false);
     }
-    setOpenSnackbar(false);
-  };
 
     return (
         <>

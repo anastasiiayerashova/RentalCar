@@ -1,6 +1,9 @@
 import Button from '../Button/Button.jsx'
-import { useLocation, Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import s from './CarItem.module.css'
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleFavourite, selectFavourites } from '../../redux/favourite/slice.js'
+import FavouriteButton from '../FavouriteButton/FavouriteButton.jsx'
 
 const CarItem = ({ data }) => {
 
@@ -13,10 +16,19 @@ const CarItem = ({ data }) => {
     const formatCapitalized = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
 
     const location = useLocation()
+    const dispatch = useDispatch()
+
+    const favourites = useSelector(selectFavourites)
+    const isFavourite = favourites.some(item => item.id === id)
+
+    const handleToggleFavourite = () => {
+        dispatch(toggleFavourite(data))
+    }
     
     return (
         <li className={s.item}>
             <div className={s.img_wrapper}>
+                <FavouriteButton isFavourite={isFavourite} onClick={handleToggleFavourite}/>
                 <img src={img} className={s.picture} width="276" height="268" alt={description} />
             </div>
             <div className={s.first_wrap}>
