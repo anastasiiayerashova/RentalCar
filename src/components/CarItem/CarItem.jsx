@@ -7,6 +7,9 @@ import FavouriteButton from '../FavouriteButton/FavouriteButton.jsx'
 
 const CarItem = ({ data }) => {
 
+    const location = useLocation()
+    const dispatch = useDispatch()
+
     const { img, brand, model, rentalPrice, address, rentalCompany, type, mileage, description, year, id } = data
 
     const [city, country] = address.split(', ').slice(-2)
@@ -14,9 +17,6 @@ const CarItem = ({ data }) => {
     const newMileage = mileage.toLocaleString('fr-FR')
 
     const formatCapitalized = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
-
-    const location = useLocation()
-    const dispatch = useDispatch()
 
     const favourites = useSelector(selectFavourites)
     const isFavourite = favourites.some(item => item.id === id)
@@ -39,7 +39,6 @@ const CarItem = ({ data }) => {
                 </p>
                 <p>{`$${rentalPrice}`}</p>
             </div>
-            
             <div className={s.second_wrap}>
                 <p className={s.item_second}>{city }</p>
                 <p className={s.item_second}>{country }</p>
@@ -49,7 +48,6 @@ const CarItem = ({ data }) => {
                 <p className={s.item_second}>{formatCapitalized(type)}</p>
                 <p className={s.item_second}>{`${newMileage} km`}</p>
             </div>
-            
             <Button text='Read more' to={`/cars/${id.toString()}`} state={location} className={s.btn} />
         </li>
     )

@@ -22,4 +22,4 @@ export  const schema = () => {
             .min(5, 'Message should contain at least 5 characters')
             .max(30, 'Message cannot exceed 30 characters')
     })
-    }
+}

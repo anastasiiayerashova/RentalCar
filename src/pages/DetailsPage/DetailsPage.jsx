@@ -11,17 +11,20 @@ import { toggleFavourite, selectFavourites } from '../../redux/favourite/slice.j
 import FavouriteButton from '../../components/FavouriteButton/FavouriteButton.jsx'
 
 const DetailsPage = () => {
+
     const { id } = useParams()
     const dispatch = useDispatch()
     
     const cars = useSelector(selectCars)
     const favourites = useSelector(selectFavourites)
 
+
     useEffect(() => {
         if (cars.length === 0) {
             dispatch(getCars())
         }
     }, [cars, dispatch])
+
 
     const car = cars.find(car => car.id === id)
 

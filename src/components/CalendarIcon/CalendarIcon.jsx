@@ -1,4 +1,5 @@
 const CalendarIcon = () => {
+    
     const svgIcon = '/symbol-defs.svg'
 
     return (

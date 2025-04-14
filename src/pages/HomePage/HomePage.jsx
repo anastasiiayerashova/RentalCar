@@ -9,8 +9,6 @@ const HomePage = () => {
             <Header />
             <Hero/>
        </>
-            
-        
     )
 }
 

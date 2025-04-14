@@ -11,8 +11,10 @@ import CarItem from '../CarItem/CarItem.jsx'
 import Loader from '../Loader/Loader.jsx'
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import { carListSnackbarSx, carListAlertSx } from '../../styles.js/muiStyles.js'
 
 const CarList = () => {
+
     const filters = useSelector(selectFilters)
     const cars = useSelector(selectCars)
     const currentPage = useSelector(selectCurrentPage)
@@ -26,6 +28,8 @@ const CarList = () => {
     const [filtersOn, setFiltersOn] = useState(false)
     const [openSnackbar, setOpenSnackbar] = useState(false);
 
+    // при монтировании извлекаем параметры фильтров из url 
+
     useEffect(() => {
 
         const newFilters = {
@@ -36,7 +40,7 @@ const CarList = () => {
         }
 
             dispatch(setFilters(newFilters))
-            setFiltersOn(true)
+            setFiltersOn(true) // флаг для инициализации загрузки машин после установки фильтров
 
     }, [searchParams, dispatch])
 
@@ -55,18 +59,18 @@ const CarList = () => {
 
     const handleClick = () => {
         if (currentPage < totalPages) {
+
             if (totalPages - currentPage === 1) {
-                console.log('no cars more')
                 setOpenSnackbar(true)
             }
+
             dispatch(setCurrentPage())
         }
     }
 
     const handleSnackbarClose = (event, reason) => {
-        if (reason === 'clickaway') {
-          return
-        }
+
+        if (reason === 'clickaway') return
         setOpenSnackbar(false);
     }
 
@@ -84,11 +88,8 @@ const CarList = () => {
                 </ul>
 
             {currentPage < totalPages && (loading ? (<Loader/>) : ((
-                <button
-                    type="button"
-                    onClick={handleClick}
-                    className={s.btn}
-                >
+                
+                <button type="button" onClick={handleClick} className={s.btn}>
                     Load more
                 </button>
             )))  }
@@ -99,29 +100,13 @@ const CarList = () => {
               autoHideDuration={5000}
               onClose={handleSnackbarClose}
               anchorOrigin={{ vertical: 'top', horizontal: 'center' }} 
-              sx={{
-                   width: '90%', 
-                   height: '50px', 
-                   marginTop: '10px',
-                   fontSize: '16px',
-                }}
+              sx={carListSnackbarSx}
             >
                 <Alert
                     onClose={handleSnackbarClose}
                     severity="warning"
                     variant="filled"
-                    sx={{
-                        width: '100%', height: '100%',
-                        fontFamily: 'Manrope',
-                        fontSize: '18px',
-                        textAlign: 'center',
-                        lineHeight: 1.25,
-                        fontWeight: 500,
-                        borderRadius: '14px',
-                        backgroundColor: '#FAC898',
-                        color: 'var(--main)',
-                        border: 'none'
-                    }}>
+                    sx={carListAlertSx}>
                       All cars are loaded
                 </Alert>
             </Snackbar>

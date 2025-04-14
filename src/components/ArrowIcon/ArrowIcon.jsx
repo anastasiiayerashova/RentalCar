@@ -1,4 +1,5 @@
 const CustomArrowIcon = (props) => (
+
   <svg
     {...props}
     width="16"
@@ -14,6 +15,7 @@ const CustomArrowIcon = (props) => (
       fill="currentColor"
     />
   </svg>
-);
+    
+)
 
 export default CustomArrowIcon

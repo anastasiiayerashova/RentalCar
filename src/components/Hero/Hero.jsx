@@ -2,6 +2,7 @@ import Button from '../Button/Button.jsx'
 import s from './Hero.module.css'
 
 const Hero = () => {
+    
     return (
         <section className={s.hero}>
             <div className={s.content}>

@@ -7,10 +7,13 @@ import Alert from '@mui/material/Alert';
 import { schema } from '../../constants/index.js';
 import Calendar from '../DatePicker/DatePicker.jsx';
 import dayjs from 'dayjs';
+import { bookingSnackbarSx, bookingAlertSx } from '../../styles.js/muiStyles.js';
 
 const BookingForm = () => {
 
     const [openSnackbar, setOpenSnackbar] = useState(false)
+    const [bookedDate, setBookedDate] = useState('')
+    const [bookedName, setBookedName] = useState('')
 
     const nameId = useId()
     const emailId = useId()
@@ -22,7 +25,6 @@ const BookingForm = () => {
         setValue,
         reset,
         trigger,
-        getValues,
         watch,
         formState: {errors}
     } = useForm({
@@ -33,8 +35,8 @@ const BookingForm = () => {
     })
 
     const onSubmit = (values) => {
-        
-console.log('Form is valid, submitting:', values);
+        setBookedName(values.name)
+        setBookedDate(values.date)
         setOpenSnackbar(true)
         reset()
     }
@@ -63,11 +65,11 @@ console.log('Form is valid, submitting:', values);
                     {errors.email && <p className={s.error}>{errors.email.message}</p>}
                 </div>
                 <div className={s.input_group}>
-                        <Calendar value={watch('date') ? dayjs(watch('date')) : null} onChange={(value) => {
-                            setValue('date', value?.format('YYYY-MM-DD') || '')
-                            trigger('date')
-                        }} />
-                        {errors.date && <p className={s.error}>{errors.date.message}</p>}
+                    <Calendar value={watch('date') ? dayjs(watch('date')) : null} onChange={(value) => {
+                        setValue('date', value?.format('YYYY-MM-DD') || '')
+                        trigger('date')
+                    }} />
+                    {errors.date && <p className={s.error}>{errors.date.message}</p>}
                 </div>
                 <div className={s.input_group}>
                     <label htmlFor={msgId} className={s.visually_hidden}>Message</label>
@@ -82,28 +84,14 @@ console.log('Form is valid, submitting:', values);
                 autoHideDuration={5000}
                 onClose={handleSnackbarClose}
                 anchorOrigin={{ vertical: 'top', horizontal: 'center' }} 
-                sx={{
-                    width: '100%', 
-                    height: '50px', 
-                    marginTop: '10px',
-                }}
+                sx={bookingSnackbarSx}
             >
                 <Alert
                     onClose={handleSnackbarClose}
                     severity="success"
                     variant="filled"
-                    sx={{
-                    width: '100%', height: '100%',
-                    fontFamily: 'Manrope',
-                    fontSize: '16px',
-                    lineHeight: 1.25,
-                    fontWeight: 400,
-                    borderRadius: '14px',
-                    backgroundColor: '#A5D6A7',
-                    color: 'var(--white)',
-                    border: 'none'
-                    }}>
-                        Booking successfully submitted!
+                    sx={bookingAlertSx}>
+                        {bookedDate ? `Thanks ${bookedName}, booking date successfully submitted for ${dayjs(bookedDate).format('MMMM D, YYYY')}!` : 'Booking successfully submitted'}
                 </Alert>
             </Snackbar>
      </>

@@ -4,6 +4,7 @@ import Header from '../../components/Header/Header.jsx'
 import s from './CatalogPage.module.css'
 
 const CatalogPage = () => {
+    
     return (
         <>
             <Header />

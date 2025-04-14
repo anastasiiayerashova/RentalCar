@@ -10,6 +10,8 @@ function App() {
 
   const location = useLocation()
 
+  // при монтировании устанавливаем заголовок в заисимости от location
+
   useEffect(() => {
     switch (location.pathname) {
       case '/': 

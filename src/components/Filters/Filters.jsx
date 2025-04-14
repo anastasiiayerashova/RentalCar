@@ -38,12 +38,11 @@ const Filters = () => {
         dispatch(resetPage())
         dispatch(setFilters(formData))
 
-        const filteredData = {}
+        // фильтруем formData чтобы исключить в url пустые поля (превращаем объект в массив пар, фильтруем массив, возвращаем объект)
 
-        if (formData.brand) filteredData.brand = formData.brand
-        if (formData.price) filteredData.price = formData.price
-        if (formData.mileageFrom) filteredData.mileageFrom = formData.mileageFrom
-        if (formData.mileageTo) filteredData.mileageTo = formData.mileageTo
+        const filteredData = Object.fromEntries(                                                       
+            Object.entries(formData).filter(([_, value]) => value)
+        )
         
         setSearchParams(filteredData)
     }
@@ -134,6 +133,7 @@ const Filters = () => {
                             name='mileageFrom'
                             id='mileageFrom'
                             prefix='From '
+                            suffix=' km'
                         />
                     </div>
                     <div className={s.mileage_wrap}>
@@ -146,6 +146,7 @@ const Filters = () => {
                             thousandSeparator=','
                             placeholder='To'
                             prefix='To '
+                            suffix=' km'
                             name='mileageTo'
                             id='mileageTo'
                         />

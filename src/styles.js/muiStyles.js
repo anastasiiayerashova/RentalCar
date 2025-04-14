@@ -126,3 +126,76 @@ export const menuPricePropsSx = {
         },
     }
 }
+
+export const bookingSnackbarSx = {
+    width: '100%', 
+    marginTop: '10px',
+}
+
+export const bookingAlertSx = {
+    width: '100%', height: '100%',
+    fontFamily: 'Manrope',
+    fontSize: '16px',
+    lineHeight: 1.25,
+    fontWeight: 400,
+    borderRadius: '14px',
+    backgroundColor: '#A5D6A7',
+    color: 'var(--white)',
+    border: 'none'     
+}
+
+export const datePickerPopperSx = {
+    "& .MuiPaper-root": {
+        width: "276px", 
+        borderRadius: "14px",
+        overflow: "hidden",
+    },
+}
+
+export const datePickerTextFieldSx = {
+    '& .MuiOutlinedInput-root': {
+        textAlign: 'center',
+        color: 'var(--gray)', 
+        backgroundColor: 'var(--inputs)',
+        borderRadius: '12px',
+        padding: '12px 20px',
+        height: '48px',
+            '& fieldset': {
+                border: 'none'
+            },
+            '& .MuiSvgIcon-root': {
+                color: 'var(--gray)',
+                width: '20px',
+                height: '20px'
+            },
+    },
+}
+
+export const datePickerInputLabelSx = {
+    fontSize: '16px',
+    fontFamily: 'Manrope',
+    fontWeight: 500,
+    lineHeight: 1.25,
+    paddingLeft: '6px',
+    color: 'var(--gray)'
+}
+
+export const carListSnackbarSx = {
+    width: '100%', 
+    height: '50px', 
+    marginTop: '10px',
+    fontSize: '16px',
+}
+
+export const carListAlertSx = {
+    width: '100%', height: '100%',
+    fontFamily: 'Manrope',
+    fontSize: '18px',
+    textAlign: 'center',
+    lineHeight: 1.25,
+    fontWeight: 500,
+    borderRadius: '14px',
+    backgroundColor: '#FAC898',
+    color: 'var(--main)',
+    border: 'none'
+}
