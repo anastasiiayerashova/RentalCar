@@ -1,5 +1,5 @@
 export const leftSlide = {
-  hidden: { x: -300, opacity: 0 },
+  hidden: { x: -200, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
@@ -8,7 +8,7 @@ export const leftSlide = {
 }
 
 export const rightSlide = {
-  hidden: { x: 300, opacity: 0 },
+  hidden: { x: 200, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,

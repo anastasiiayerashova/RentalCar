@@ -24,6 +24,13 @@
   border: 1px solid var(--button-hover);
 }
 
+.no_result {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+}
+
 @media screen and (min-width: 768px) {
   .list {
     flex-direction: row;

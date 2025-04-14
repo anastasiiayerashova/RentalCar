@@ -51,6 +51,8 @@ const CarList = () => {
 
         if (filtersOn) {
 
+            setIsLoading(true)
+
             dispatch(getCars(filters)).finally(() => {
                 setIsLoading(false)
             })
@@ -88,6 +90,10 @@ const CarList = () => {
                         <CarItem key={car.id} data={car} />
                     ))}
                 </motion.ul>
+                        
+                {cars.length === 0 && !isLoading && (
+                    <p className={s.no_result}>No cars found. Try different filters</p>
+                )}
 
             {currentPage < totalPages && (loading ? (<Loader/>) : ((
                 
