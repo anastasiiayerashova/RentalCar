@@ -10,7 +10,7 @@ import s from './Filters.module.css'
 import { NumericFormat } from 'react-number-format';
 import CustomArrowIcon from '../ArrowIcon/ArrowIcon.jsx';
 import { clearItems, resetPage } from '../../redux/cars/slice.js';
-import { menuItemSx, formControlSx, menuPropsSx, menuPricePropsSx } from '../../styles.js/muiStyles.js';
+import { menuItemSx, formControlSx, menuPropsSx, menuPricePropsSx } from '../../styles/muiStyles.js';
 
 const Filters = () => {
     const carBrands = useSelector(selectCarBrands)

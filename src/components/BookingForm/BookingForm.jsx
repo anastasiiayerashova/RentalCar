@@ -7,7 +7,7 @@ import Alert from '@mui/material/Alert';
 import { schema } from '../../constants/index.js';
 import Calendar from '../DatePicker/DatePicker.jsx';
 import dayjs from 'dayjs';
-import { bookingSnackbarSx, bookingAlertSx } from '../../styles.js/muiStyles.js';
+import { bookingSnackbarSx, bookingAlertSx } from '../../styles/muiStyles.js';
 
 const BookingForm = () => {
 

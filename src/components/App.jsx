@@ -1,11 +1,18 @@
-import HomePage from '../pages/HomePage/HomePage.jsx'
+// import HomePage from '../pages/HomePage/HomePage.jsx'
 import { Routes, Route } from 'react-router-dom'
+import { lazy } from 'react';
 import './App.css'
-import CatalogPage from '../pages/CatalogPage/CatalogPage.jsx'
-import DetailsPage from '../pages/DetailsPage/DetailsPage.jsx'
+// import CatalogPage from '../pages/CatalogPage/CatalogPage.jsx'
+// import DetailsPage from '../pages/DetailsPage/DetailsPage.jsx'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import NotFoundPage from '../pages/NotFoundPage/NotFoundPage.jsx'
+// import NotFoundPage from '../pages/NotFoundPage/NotFoundPage.jsx'
+import SharedLayout from './SharedLayout.jsx'
+
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
+const CatalogPage = lazy(() => import('../pages/CatalogPage/CatalogPage'));
+const DetailsPage = lazy(() => import('../pages/DetailsPage/DetailsPage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
 function App() {
 
@@ -33,12 +40,14 @@ function App() {
     }, [location.pathname])
 
   return (
-    <Routes>
+    <SharedLayout>
+      <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='/catalog' element={<CatalogPage />} />
       <Route path='/cars/:id' element={<DetailsPage />} />
       <Route path='*' element={<NotFoundPage/> } />
     </Routes>
+    </SharedLayout>
   )
 }
 

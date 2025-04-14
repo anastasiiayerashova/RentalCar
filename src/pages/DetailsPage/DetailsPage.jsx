@@ -54,7 +54,7 @@ const DetailsPage = () => {
 
     return (
         <>
-        <Header/>
+        {/* <Header/> */}
         <section className={s.details}>
             <div className={s.main}>
                 <div className={s.first_wrap}>

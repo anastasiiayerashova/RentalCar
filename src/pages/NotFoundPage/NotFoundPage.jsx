@@ -6,7 +6,7 @@ const NotFoundPage = () => {
 
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <section className={s.ntf_section}>
                 <div className={s.content}>
                 <h1 className={s.title}>Oops! We couldn't find the page</h1>

@@ -11,7 +11,7 @@ import CarItem from '../CarItem/CarItem.jsx'
 import Loader from '../Loader/Loader.jsx'
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
-import { carListSnackbarSx, carListAlertSx } from '../../styles.js/muiStyles.js'
+import { carListSnackbarSx, carListAlertSx } from '../../styles/muiStyles.js'
 
 const CarList = () => {
 
