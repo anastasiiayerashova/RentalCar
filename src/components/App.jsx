@@ -5,6 +5,7 @@ import CatalogPage from '../pages/CatalogPage/CatalogPage.jsx'
 import DetailsPage from '../pages/DetailsPage/DetailsPage.jsx'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import NotFoundPage from '../pages/NotFoundPage/NotFoundPage.jsx'
 
 function App() {
 
@@ -35,7 +36,8 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage />} />
       <Route path='/catalog' element={<CatalogPage />} />
-      <Route path='/cars/:id' element={<DetailsPage/> } />
+      <Route path='/cars/:id' element={<DetailsPage />} />
+      <Route path='*' element={<NotFoundPage/> } />
     </Routes>
   )
 }
