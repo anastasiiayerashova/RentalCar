@@ -16,8 +16,6 @@
 - 🧩 **Custom Components**: DatePicker, Calendar, Snackbar, Alert, Select
 - 🌍 **Vercel** — deployment platform for easy hosting
 
----
-
 ## 🔍 Main Features
 
 - 🚗 **Car filtering by**:
@@ -51,8 +49,6 @@
   - **Form fields** include inputs like name, email, rental duration, car model, and accessories selection
   - Dynamic form validation ensures that users provide the necessary information before submitting their booking request.
 
----
-
 ## 🔧 Code Principles and Best Practices
 
 - 💡 **DRY principle** (Don't Repeat Yourself) is followed — components are reused, and logic is well-organized
@@ -61,15 +57,13 @@
 - 📂 **Separation of Concerns** — Each component and module has a clear responsibility, improving maintainability and scalability.
 - 🚀 **YAGNI principle** (You Aren’t Gonna Need It) — Features are implemented only when they are needed, avoiding unnecessary code or functionality.
 
----
-
 ## 📁 Project Structure
 
 ```plaintext
 
 src/
 ├── components/ # Reusable components
-├── constants/ # Reusable App constants
+├── constants/ # App constants
 ├── fonts/ # App fonts
 ├── pages/ # Page components (HomePage, CatalogPage, DetailsPage, NotFoundPage)
 ├── redux/ # Redux store, slices, selectors
@@ -81,8 +75,6 @@ public/
 ├── symbol-defs.svg # SVG icons
 
 ```
-
----
 
 ## 🚀 Getting Started
 
@@ -107,8 +99,6 @@ npm run dev
 
 ```
 
----
-
 ## 👩‍💻 About the Author
 
 **Anastasiia Yerashova** — Junior Full-Stack Developer passionate about writing clean and efficient code, growing professionally, and collaborating with purpose-driven teams.
@@ -117,8 +107,6 @@ npm run dev
 > My goal is to grow professionally, achieve meaningful results, and work with people who share my drive for success.  
 > I approach every task with responsibility and dedication, always giving 100%.  
 > My ability to quickly adapt to new challenges and technologies allows me to thrive in agile and fast-paced environments."
-
----
 
 ## 📫 Contact
 
