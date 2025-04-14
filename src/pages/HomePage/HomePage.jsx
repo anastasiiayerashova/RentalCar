@@ -1,14 +1,13 @@
-import Header from '../../components/Header/Header.jsx'
+import { AnimatedLayout } from '../../components/AnimatedLayout.jsx'
 import Hero from '../../components/Hero/Hero.jsx'
 import s from './HomePage.module.css'
 
 const HomePage = () => {
 
     return (
-        <>
-            {/* <Header /> */}
+        <AnimatedLayout>
             <Hero/>
-       </>
+       </AnimatedLayout>
     )
 }
 

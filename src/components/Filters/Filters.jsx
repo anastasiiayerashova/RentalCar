@@ -11,9 +11,11 @@ import { NumericFormat } from 'react-number-format';
 import CustomArrowIcon from '../ArrowIcon/ArrowIcon.jsx';
 import { clearItems, resetPage } from '../../redux/cars/slice.js';
 import { menuItemSx, formControlSx, menuPropsSx, menuPricePropsSx } from '../../styles/muiStyles.js';
+import { motion } from 'framer-motion';
 
 const Filters = () => {
     const carBrands = useSelector(selectCarBrands)
+    const [isReady, setIsReady] = useState(false)
 
     const dispatch = useDispatch()
     const [searchParams, setSearchParams] = useSearchParams()
@@ -26,7 +28,7 @@ const Filters = () => {
     })
 
     useEffect(() => {
-        dispatch(getCarBrands())
+        dispatch(getCarBrands()).then(() => setIsReady(true))
     }, [dispatch])
 
 
@@ -57,7 +59,7 @@ const Filters = () => {
     }
 
     return (
-        <div className={s.filters}>
+        <motion.div className={s.filters} initial={{ opacity: 0 }} animate={{ opacity: isReady ? 1 : 0 }} transition={{ duration: 0.7 }}>
             <form className={s.form} onSubmit={handleSubmit}>
 
                 {/* brands */}
@@ -155,7 +157,7 @@ const Filters = () => {
                 </div>
                 <button type='submit' className={s.btn}>Search</button>
             </form>
-        </div>
+        </motion.div>
     )
  }
 

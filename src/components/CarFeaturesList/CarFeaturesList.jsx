@@ -50,7 +50,7 @@ const CarFeaturesList = ({ car }) => {
                             </ul>
                         </div>
                         <div className={s.list_main}>
-                            <p className={s.list_title}>Car Specifications: </p>
+                    <p className={s.list_title}>Car Specifications:</p>
                             <ul className={s.features_list}>
                                 <li>
                                     <svg width={16} height={16}>

@@ -12,6 +12,7 @@ import Loader from '../Loader/Loader.jsx'
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import { carListSnackbarSx, carListAlertSx } from '../../styles/muiStyles.js'
+import { motion } from 'framer-motion'
 
 const CarList = () => {
 
@@ -79,7 +80,7 @@ const CarList = () => {
            {isLoading ? (
         <Loader />
     ) : (
-        <div className={s.car_section}>
+        <motion.div className={s.car_section} initial={{ opacity: 0 }} animate={{ opacity: 1  }} transition={{ duration: 0.7 }}>
             
                 <ul className={s.list}>
                     {cars.map((car) => (
@@ -93,7 +94,7 @@ const CarList = () => {
                     Load more
                 </button>
             )))  }
-        </div>
+        </motion.div>
             )}
             <Snackbar
               open={openSnackbar}

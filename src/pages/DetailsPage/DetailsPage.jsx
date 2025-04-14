@@ -10,6 +10,7 @@ import Loader from '../../components/Loader/Loader.jsx'
 import { toggleFavourite, selectFavourites } from '../../redux/favourite/slice.js'
 import FavouriteButton from '../../components/FavouriteButton/FavouriteButton.jsx'
 import CarFeaturesList from '../../components/CarFeaturesList/CarFeaturesList.jsx'
+import { AnimatedLayout } from '../../components/AnimatedLayout.jsx'
 
 const DetailsPage = () => {
 
@@ -44,17 +45,8 @@ const DetailsPage = () => {
         dispatch(toggleFavourite(car))
     }
 
-    const [city, country] = car.address.split(', ').slice(-2)
-
-    const newMileage = car.mileage.toLocaleString('fr-FR')
-
-    const formatCapitalized = (str) => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
-
-    const svgIcon = '/symbol-defs.svg'
-
     return (
-        <>
-        {/* <Header/> */}
+        <AnimatedLayout>
         <section className={s.details}>
             <div className={s.main}>
                 <div className={s.first_wrap}>
@@ -67,7 +59,7 @@ const DetailsPage = () => {
                 <CarFeaturesList car={car} />
             </div>
         </section>
-    </>
+    </AnimatedLayout>
     )
  }
 
