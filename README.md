@@ -51,6 +51,8 @@
 
 ## 📁 Project Structure
 
+```plaintext
+
 src/
 ├── components/ # Reusable components
 ├── constants/ # Reusable App constants
@@ -63,6 +65,8 @@ src/
 public/
 ├── favicon.svg # App favicon
 ├── symbol-defs.svg # SVG icons
+
+```
 
 ---
 
