@@ -4,6 +4,8 @@ import s from './CarItem.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleFavourite, selectFavourites } from '../../redux/favourite/slice.js'
 import FavouriteButton from '../FavouriteButton/FavouriteButton.jsx'
+import { motion } from 'framer-motion'
+import { itemVariants } from '../../styles/animation.js'
 
 const CarItem = ({ data }) => {
 
@@ -26,7 +28,7 @@ const CarItem = ({ data }) => {
     }
     
     return (
-        <li className={s.item}>
+        <motion.li className={s.item} variants={itemVariants}>
             <div className={s.img_wrapper}>
                 <FavouriteButton isFavourite={isFavourite} onClick={handleToggleFavourite}/>
                 <img src={img} className={s.picture} width="276" height="268" alt={description} />
@@ -49,7 +51,7 @@ const CarItem = ({ data }) => {
                 <p className={s.item_second}>{`${newMileage} km`}</p>
             </div>
             <Button text='Read more' to={`/cars/${id.toString()}`} state={location} className={s.btn} />
-        </li>
+        </motion.li>
     )
  }
 

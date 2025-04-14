@@ -1,5 +1,3 @@
-import { useInView } from 'react-intersection-observer'
-
 export const leftSlide = {
   hidden: { x: -300, opacity: 0 },
   visible: {
@@ -7,7 +5,7 @@ export const leftSlide = {
     opacity: 1,
     transition: { duration: 0.6, ease: 'easeOut' },
   },
-};
+}
 
 export const rightSlide = {
   hidden: { x: 300, opacity: 0 },
@@ -16,7 +14,7 @@ export const rightSlide = {
     opacity: 1,
     transition: { duration: 0.6, ease: 'easeOut' },
   },
-};
+}
 
 export const ulAnimation = {
     hidden: { opacity: 0, y: 100 },
@@ -29,4 +27,18 @@ export const ulAnimation = {
         damping: 25,
       },
     },
-};
+}
+
+export const listVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+export const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+}

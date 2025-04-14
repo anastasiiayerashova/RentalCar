@@ -13,6 +13,7 @@ import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import { carListSnackbarSx, carListAlertSx } from '../../styles/muiStyles.js'
 import { motion } from 'framer-motion'
+import { listVariants } from '../../styles/animation.js'
 
 const CarList = () => {
 
@@ -62,7 +63,7 @@ const CarList = () => {
         if (currentPage < totalPages) {
 
             if (totalPages - currentPage === 1) {
-                setOpenSnackbar(true)
+                setTimeout(() => setOpenSnackbar(true), 0)
             }
 
             dispatch(setCurrentPage())
@@ -82,11 +83,11 @@ const CarList = () => {
     ) : (
         <motion.div className={s.car_section} initial={{ opacity: 0 }} animate={{ opacity: 1  }} transition={{ duration: 0.7 }}>
             
-                <ul className={s.list}>
+                <motion.ul className={s.list} initial="hidden" animate="visible" variants={listVariants}>
                     {cars.map((car) => (
                         <CarItem key={car.id} data={car} />
                     ))}
-                </ul>
+                </motion.ul>
 
             {currentPage < totalPages && (loading ? (<Loader/>) : ((
                 

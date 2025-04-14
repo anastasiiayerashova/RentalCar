@@ -23,11 +23,17 @@
   display: flex;
   flex-direction: column;
   row-gap: 56px;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
+  .catalog {
+    padding: 84px 90px 124px 90px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .catalog {
     padding: 84px 120px 124px 120px;
   }
