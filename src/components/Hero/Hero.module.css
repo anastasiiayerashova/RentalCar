@@ -47,6 +47,16 @@
   font-weight: 600;
 }
 
+@media screen and (max-width: 374px) {
+  .title {
+    font-size: 54px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .hero {
     align-items: flex-end;

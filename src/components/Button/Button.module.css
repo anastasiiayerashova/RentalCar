@@ -16,3 +16,9 @@
 .btn:focus {
   background-color: var(--button-hover);
 }
+
+@media screen and (max-width: 374px) {
+  .btn {
+    width: 260px;
+  }
+}

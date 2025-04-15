@@ -10,6 +10,7 @@ import { toggleFavourite, selectFavourites } from '../../redux/favourite/slice.j
 import FavouriteButton from '../../components/FavouriteButton/FavouriteButton.jsx'
 import CarFeaturesList from '../../components/CarFeaturesList/CarFeaturesList.jsx'
 import { AnimatedLayout } from '../../components/AnimatedLayout.jsx'
+import NotFoundCar from '../../components/NotFoundCar/NotFoundCar.jsx'
 
 const DetailsPage = () => {
 
@@ -29,9 +30,15 @@ const DetailsPage = () => {
 
     const car = cars.find(car => car.id === id)
 
+    if (cars.length === 0) {
+        return (
+            <Loader/>
+        )
+    }
+
     if (!car) {
        return (
-              <Loader/>
+              <NotFoundCar/>
         )
     }
 
