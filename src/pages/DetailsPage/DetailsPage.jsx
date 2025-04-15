@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 import { selectCars } from '../../redux/cars/slice.js'
 import { useSelector, useDispatch } from 'react-redux'
 import BookingForm from '../../components/BookingForm/BookingForm.jsx'
-import Header from '../../components/Header/Header.jsx'
 import { useEffect } from 'react'
 import { getCars } from '../../redux/cars/operations.js'
 import Loader from '../../components/Loader/Loader.jsx'
@@ -32,10 +31,7 @@ const DetailsPage = () => {
 
     if (!car) {
        return (
-           <>
-              <Header />
               <Loader/>
-           </>
         )
     }
 

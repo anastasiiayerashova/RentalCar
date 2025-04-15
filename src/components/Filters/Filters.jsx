@@ -40,7 +40,7 @@ const Filters = () => {
         dispatch(resetPage())
         dispatch(setFilters(formData))
 
-        // фильтруем formData чтобы исключить в url пустые поля (превращаем объект в массив пар, фильтруем массив, возвращаем объект)
+        // фильтруем formData чтобы исключить в url пустые поля
 
         const filteredData = Object.fromEntries(                                                       
             Object.entries(formData).filter(([_, value]) => value)

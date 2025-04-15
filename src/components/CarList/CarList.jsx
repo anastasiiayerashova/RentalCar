@@ -12,8 +12,6 @@ import Loader from '../Loader/Loader.jsx'
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import { carListSnackbarSx, carListAlertSx } from '../../styles/muiStyles.js'
-import { motion } from 'framer-motion'
-import { listVariants } from '../../styles/animation.js'
 
 const CarList = () => {
 
@@ -83,13 +81,13 @@ const CarList = () => {
            {isLoading ? (
         <Loader />
     ) : (
-        <motion.div className={s.car_section} initial={{ opacity: 0 }} animate={{ opacity: 1  }} transition={{ duration: 0.7 }}>
+        <div className={s.car_section}>
             
-                <motion.ul className={s.list} initial="hidden" animate="visible" variants={listVariants}>
+                <ul className={s.list}>
                     {cars.map((car) => (
                         <CarItem key={car.id} data={car} />
                     ))}
-                </motion.ul>
+                </ul>
                         
                 {cars.length === 0 && !isLoading && (
                     <p className={s.no_result}>No cars found. Try different filters</p>
@@ -101,7 +99,7 @@ const CarList = () => {
                     Load more
                 </button>
             )))  }
-        </motion.div>
+        </div>
             )}
             <Snackbar
               open={openSnackbar}

@@ -9,14 +9,14 @@
   border: 0;
 }
 
+.catalog {
+  padding: 60px 30px 60px 30px;
+}
+
 @media screen and (max-width: 374px) {
   .catalog {
     padding: 60px 20px 60px 20px;
   }
-}
-
-.catalog {
-  padding: 60px 30px 60px 30px;
 }
 
 .container {
