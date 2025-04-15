@@ -50,19 +50,20 @@ const DetailsPage = () => {
 
     return (
         <AnimatedLayout>
-        <section className={s.details}>
-            <div className={s.main}>
-                <div className={s.first_wrap}>
-                    <div className={s.img_wrapper}>
-                        <FavouriteButton isFavourite={isFavourite} onClick={handleToggleFavourite}/>
-                        <img src={car.img} alt={car.description} className={s.image} />
+            <section className={s.details}>
+                <div className={s.main}>
+                    <h2 className={s.visually_hidden}>Explore every detail before you drive</h2>
+                    <div className={s.first_wrap}>
+                        <div className={s.img_wrapper}>
+                            <FavouriteButton isFavourite={isFavourite} onClick={handleToggleFavourite}/>
+                            <img src={car.img} alt={car.description} className={s.image} />
+                        </div>
+                        <BookingForm/>
                     </div>
-                    <BookingForm/>
+                    <CarFeaturesList car={car} />
                 </div>
-                <CarFeaturesList car={car} />
-            </div>
-        </section>
-    </AnimatedLayout>
+            </section>
+        </AnimatedLayout>
     )
  }
 

@@ -15,6 +15,7 @@ export const menuItemSx = {
   },
 };
 
+
 export const formControlSx = {
     backgroundColor: 'var(--inputs)',
     maxWidth: '204px',
@@ -35,6 +36,7 @@ export const formControlSx = {
                 }
         }
 }
+
 
 export const menuPropsSx = {
     PaperProps: {
@@ -82,6 +84,7 @@ export const menuPropsSx = {
     }
 }
 
+
 export const menuPricePropsSx = {
     PaperProps: {
         sx: {
@@ -127,10 +130,12 @@ export const menuPricePropsSx = {
     }
 }
 
+
 export const bookingSnackbarSx = {
     width: '100%', 
     marginTop: '10px',
 }
+
 
 export const bookingAlertSx = {
     width: '100%', height: '100%',
@@ -144,6 +149,7 @@ export const bookingAlertSx = {
     border: 'none'     
 }
 
+
 export const datePickerPopperSx = {
     "& .MuiPaper-root": {
         width: "276px", 
@@ -151,6 +157,7 @@ export const datePickerPopperSx = {
         overflow: "hidden",
     },
 }
+
 
 export const datePickerTextFieldSx = {
     '& .MuiOutlinedInput-root': {
@@ -171,6 +178,7 @@ export const datePickerTextFieldSx = {
     },
 }
 
+
 export const datePickerInputLabelSx = {
     fontSize: '16px',
     fontFamily: 'Manrope',
@@ -180,12 +188,14 @@ export const datePickerInputLabelSx = {
     color: 'var(--gray)'
 }
 
+
 export const carListSnackbarSx = {
     width: '100%', 
     height: '50px', 
     marginTop: '10px',
     fontSize: '16px',
 }
+
 
 export const carListAlertSx = {
     width: '100%', height: '100%',

@@ -1,7 +1,8 @@
 import Header from "./Header/Header.jsx"
 import { Suspense } from "react"
 
-const SharedLayout = ({children}) => {
+const SharedLayout = ({ children }) => {
+    
     return (
         <>
             <Header />

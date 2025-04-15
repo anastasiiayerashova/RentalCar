@@ -1,12 +1,8 @@
-// import HomePage from '../pages/HomePage/HomePage.jsx'
 import { Routes, Route } from 'react-router-dom'
 import { lazy } from 'react';
 import './App.css'
-// import CatalogPage from '../pages/CatalogPage/CatalogPage.jsx'
-// import DetailsPage from '../pages/DetailsPage/DetailsPage.jsx'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-// import NotFoundPage from '../pages/NotFoundPage/NotFoundPage.jsx'
 import SharedLayout from './SharedLayout.jsx'
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
@@ -18,7 +14,7 @@ function App() {
 
   const location = useLocation()
 
-  // при монтировании устанавливаем заголовок в заисимости от location
+  // при монтировании устанавливаем заголовок в зависимости от location
 
   useEffect(() => {
     switch (location.pathname) {
@@ -41,12 +37,12 @@ function App() {
 
   return (
     <SharedLayout>
-      <Routes>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/catalog' element={<CatalogPage />} />
-      <Route path='/cars/:id' element={<DetailsPage />} />
-      <Route path='*' element={<NotFoundPage/> } />
-    </Routes>
+       <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/catalog' element={<CatalogPage />} />
+          <Route path='/cars/:id' element={<DetailsPage />} />
+          <Route path='*' element={<NotFoundPage/> } />
+       </Routes>
     </SharedLayout>
   )
 }

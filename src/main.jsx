@@ -9,9 +9,9 @@ import { StyledEngineProvider } from '@mui/material/styles';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
       <BrowserRouter>
-        <StyledEngineProvider>
-          <App />
-        </StyledEngineProvider>
+          <StyledEngineProvider>
+              <App />
+          </StyledEngineProvider>
       </BrowserRouter>
   </Provider>
 )

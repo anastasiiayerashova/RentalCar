@@ -49,7 +49,7 @@ const BookingForm = () => {
     };
 
     return (
-        <>
+    <>
         <div className={s.container}>
             <p className={s.title}>Book your car now</p>
             <p className={s.text}>Stay connected! We are always ready to help you.</p>
